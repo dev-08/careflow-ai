@@ -1,0 +1,2 @@
+-- This migration was originally applied without the intake schema.
+-- The intake schema is defined in migration 20260827012114.
