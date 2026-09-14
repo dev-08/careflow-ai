@@ -36,11 +36,15 @@ export async function login(formData: FormData) {
   });
 
   if (error) {
-    console.error("Clinician login failed:", error.message);
-
+    console.error("Clinician login failed:", {
+      message: error.message,
+      status: error.status,
+      code: error.code,
+    });
+  
     redirect(
       `/login?error=${encodeURIComponent(
-        "The email or password is incorrect."
+        `Supabase authentication failed: ${error.message}`
       )}`
     );
   }
